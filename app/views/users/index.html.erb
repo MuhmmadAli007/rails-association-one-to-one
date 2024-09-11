@@ -18,9 +18,7 @@
         <td>
           <%= link_to 'Show', user_path(user) %>
           <%= link_to 'Edit', edit_user_path(user) %>
-         <%= form_for @user, url: user_path(@user), method: :delete do %>
-  <%= submit_tag 'Delete' %>
-<% end %>
+          <%= link_to 'Delete', user_path(user), method: :delete,  data: { "turbo-method": :delete }  %>
         </td>
       </tr>
     <% end %>
