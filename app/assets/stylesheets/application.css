@@ -1,15 +1,137 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* application.css */
+
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #00698f;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  h4 {
+    font-size: 16px;
+  }
+  
+  h5 {
+    font-size: 14px;
+  }
+  
+  h6 {
+    font-size: 12px;
+  }
+  
+  /* Links */
+  
+  a {
+    text-decoration: none;
+    color: #00698f;
+  }
+  
+  a:hover {
+    color: #004461;
+  }
+  
+  /* Layout */
+  
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tables */
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Users Index Page */
+  
+  .users-index {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .users-index li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .users-index li:last-child {
+    border-bottom: none;
+  }
+  
+  .users-index a {
+    color: #00698f;
+  }
+  
+  .users-index a:hover {
+    color: #004461;
+  }
+  
+  /* Profile Page */
+  
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile h2 {
+    margin-top: 0;
+  }

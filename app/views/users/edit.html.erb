@@ -23,6 +23,17 @@
     <%= form.email_field :email %>
   </div>
 
+  <h2>Profile</h2>
+
+  <div class="field">
+    <%= form.fields_for :profile do |profile_form| %>
+      <div class="field">
+        <%= profile_form.label :bio %>
+        <%= profile_form.text_area :bio %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Update User' %>
   </div>

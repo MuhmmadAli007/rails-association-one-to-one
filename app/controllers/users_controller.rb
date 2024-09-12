@@ -2,14 +2,16 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
   def index
-    @users = User.all
+    @users = User.includes(:profile).all
   end
 
   def show
+    # @user is already set by set_user
   end
 
   def new
     @user = User.new
+    @user.build_profile
   end
 
   def create
@@ -17,11 +19,12 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
+    @user.build_profile unless @user.profile
   end
 
   def update
@@ -44,6 +47,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, profile_attributes: [:id, :bio])
   end
 end

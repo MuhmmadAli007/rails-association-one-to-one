@@ -2,5 +2,12 @@
 
 <p>Email: <%= @user.email %></p>
 
+<h2>Profile</h2>
+<% if @user.profile.present? %>
+  <p><strong>Bio:</strong> <%= @user.profile.bio %></p>
+<% else %>
+  <p>No profile available.</p>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

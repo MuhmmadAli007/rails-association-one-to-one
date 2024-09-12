@@ -1,3 +1,5 @@
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <h1>Users</h1>
 
 <%= link_to 'New User', new_user_path %>
@@ -7,6 +9,7 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Profile Bio</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -15,13 +18,13 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
+        <td><%= user.profile&.bio || 'No profile' %></td>
         <td>
           <%= link_to 'Show', user_path(user) %>
           <%= link_to 'Edit', edit_user_path(user) %>
-          <%= link_to 'Delete', user_path(user), method: :delete,  data: { "turbo-method": :delete }  %>
+          <%= link_to 'Delete', user_path(user), method: :delete, data: { turbo_method: :delete, confirm: 'Are you sure you want to delete this user?'} %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
